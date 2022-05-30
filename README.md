@@ -18,12 +18,13 @@
         a.	Create a user on the user login page as mentioned in the sections below
         b.	Go to home.js in the parent folder
         c.	Go to line number 546
-        d.	You can see that some code is commented from 546 - 553 (purposefully – do not delete). Remove the comment tag.
-        e.	Add comments tag to the code lines 555 – 581
+        d.	You can see that some code is commented from 546 - 553 (purposefully – do not delete). Remove the comment tags for the mentioned lines.
+        e.	Add comments tag to the code lines 555 – 581, 586-592 and 598-606
         f.	Now run the program as explained in the sections below once (till booking and payment).
         g.	This will create required fields to maintain data on the localstorage.
-        h.	Undo the steps E and D
+        h.	Undo the steps D and E
         i.	Now you can run the code smoothly
+
 
 
 
