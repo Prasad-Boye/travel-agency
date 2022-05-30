@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css"/>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0”> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b1f1e42a94.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="addAct(),validateLogin(),validateBalance()">
+    <div class="check-out-page">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark font-change" id="home">
+            <a class="navbar-brand" href="../home.html">
+                <img src="logo.png" class="logo" onclick="homePage()" />
+                <p class="m-0 logo-text">Travelpedia</p>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="../home.html" id="home-packages" onclick="homePage()">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../home.html">Packages</a>
+                    <a class="nav-link" href="#address4"  onclick="checkOut()">Contact Us </a>
+                    <a class="nav-link" href="../home.html" id="logIn" onclick="getLogin()">Login</a>
+                    <a class="nav-link d-none" href="../home.html" id="logOut" onclick="getLogout()">Logout</a>
+                </div>
+            </div>
+        </nav>
+        <div class="card-container">
+            <div class="shadow-lg p-5 rounded">
+                <div class="d-flex flex-row justify-content-between money-card">
+                    <div>
+                        <h5 class="payout">Activity</h5>
+                        <ul class="list-items mr-5" id="activiti">
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="payout">Price</h5>
+                        <ul class="list-items text-right" id="costi"></ul>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-content-center">
+                    <h3>Total</h3>
+                    <h4 id="totalValue"></h4>
+                </div>
+                <div>
+                    <h3>Your Balance<span class="ml-5 pl-5 text-right" id="userUnsedBal"></span></h3>
+                </div>
+                <div class="d-flex flex-row justify-content-end">
+                    <a href="thankYou.html"><button class="btn btn-warning pay-btn" id="pay" onclick="saveUserAct(),updateBalance()">Pay</button></a>
+                </div>
+                
+            </div>
+        </div>
+    
+    
+        <div class="container-fluid bg_footer" id="address4">
+            <div class="row d-flex flex-row">
+                <div class="col-12 col-lg-3 col-md-6 text-center mb-3 mt-5 text-md-left">
+                    <div class="footer-image">
+                        <img src="logo.png" class="ml-5 w-50" />
+                        <p class="text-light ml-5 pl-md-5 pl-lg-4">  Travelpedia</p>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center justify-content-md-start">
+                        <div class="icons_footer pl-md-3 m-1">
+                            <i class="fab fa-google icon_footer"></i>
+                        </div>
+                        <div class="icons_footer pl-md-3 m-1">
+                            <i class="fab fa-twitter icon_footer"></i>
+                        </div>
+                        <div class="icons_footer pl-md-3 m-1">
+                            <i class="fab fa-instagram icon_footer"></i>
+                        </div>
+                        <div class="icons_footer pl-md-3 m-1">
+                            <i class="fab fa-linkedin icon_footer"></i>
+                        </div>
+                    </div>
+                    <p>
+                        <a class="address" href="https://www.google.com/maps/place/India+Gate/@28.6129167,77.227321,17z/data=!3m1!4b1!4m5!3m4!1s0x390ce2daa9eb4d0b:0x717971125923e5d!8m2!3d28.612912!4d77.2295097" target="_blank">
+                            37, Ayur Vigyan Nagar, New Delhi, India</a>
+                    </p>
+                </div>
+                <div class="col-6 col-lg-3 mt-md-5">
+                    <h5 class="text-white">Get to know us</h5>
+                    <p class="m-0 p-0 address">About us</p>
+                    <p class="m-0 p-0 address">Career</p>
+                    <p class="m-0 p-0 address">Press Releases</p>
+                    <p class="m-0 p-0 address">Gift a smile</p>
+                </div>
+                <div class="col-6 col-lg-3 mt-md-3 mt-lg-5">
+                    <h5 class="text-white">Connect with us</h5>
+                    <p class="m-0 p-0 address">Facebook</p>
+                    <p class="m-0 p-0 address">Twitter</p>
+                    <p class="m-0 p-0 address">Instagram</p>
+                </div>
+                <div class="col-6 col-lg-3 mt-3 mb-5 mt-lg-5">
+                    <h5 class="text-white">Let Us Help You</h5>
+                    <p class="m-0 p-0 address">Help</p>
+                </div>
+            </div>
+            <hr style="border-color:#5a7184;" />
+            <div class="row">
+                <div class="col-12 d-flex flex-row justify-content-center">
+                    <div class="mr-2">
+                        <i class="far fa-copyright icon"></i>
+                    </div>
+                    <div class="mr-3">
+                        <p>2020 by Prasad Created with Bootstrap</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <script src="../home.js"></script>
+</body>
+</html>
